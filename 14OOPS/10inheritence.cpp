@@ -7,7 +7,9 @@ using namespace std;
     int size;
     int light;
     string companyname;
-
+    void showcompany(){
+        cout<<"company name is "<<companyname<<endl;
+    }
 };
 class Car : public Vehicle{//child class
     public:
@@ -23,6 +25,6 @@ int main(){
     honda.size=5;
     honda.tyresize=5;
     honda.light=5;
+    honda.showcompany();
     cout<<honda.light<<endl;
 }
-//////////////////////////////////1 10
