@@ -9,11 +9,18 @@ public:
         this->next=NULL;
     }
 };
-void Displayrec(Node*head){
+void Display(Node*head){
         if(head==NULL) return ;
-        cout<<head->val<<" "<<endl;
-        Displayrec(head->next);
+        cout<<head->val<<" ";
+        Display(head->next);
     }
+void insertatend(Node*head,int val){
+    Node* t =new Node(val);
+    while(head->next!=NULL){
+        head=head->next;
+    }
+
+}
 int main(){
      Node* a = new Node(10);
      Node* b = new Node(20);
@@ -24,7 +31,11 @@ int main(){
      b->next=c;
      c->next=d;
      d->next=e;
+     Display(a);
+     insertatend(a,80);
+     Display(a);
+
     //  cout<<a->next->next->next->val<<endl; 
-    Displayrec(a);
+    // Displayrec(a);
 
 }
