@@ -7,6 +7,8 @@ void print(stack<int> st){
         temp.push(st.top());
         st.pop();
     }
+   //add
+    
     while(temp.size()>0){
         cout<<temp.top()<<" ";
         st.push(temp.top());
@@ -31,9 +33,9 @@ int main(){
         rt.push(gt.top());
         gt.pop();
     }
-        while(rt.size()>0){
-        st.push(rt.top());
-        rt.pop();
+    while(rt.size()>0){
+    st.push(rt.top());
+    rt.pop();
     }
     cout<<endl;
     print(st);
