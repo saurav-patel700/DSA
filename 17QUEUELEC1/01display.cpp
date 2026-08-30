@@ -12,18 +12,29 @@ void display(queue<int>& q){
     }
     cout<<endl;
 }
+// void reverse(queue<int>& q){
+//     stack<int> st;
+//     while(q.size()>0){
+//         int x=q.front();
+//         q.pop();
+//         st.push(x);
+//     }
+//     while(st.size()>0){
+//         int x=st.top();
+//         st.pop();
+//         q.push(x);
+//     }
+// }
 void reverse(queue<int>& q){
     stack<int> st;
     while(q.size()>0){
-        int x=q.front();
+        st.push(q.front());
         q.pop();
-        st.push(x);
     }
     while(st.size()>0){
-        int x=st.top();
+        q.push(st.top());
         st.pop();
-        q.push(x);
-    }
+}
 }
 int main(){
     queue<int> q;
