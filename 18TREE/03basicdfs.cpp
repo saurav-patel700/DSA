@@ -1,5 +1,6 @@
 #include<iostream>
 #include<climits>
+#include<queue>
 using namespace std;
 class Node{
 public:
@@ -21,6 +22,15 @@ void nthlevel(Node* root,int curr,int level){
     nthlevel(root->left,curr+1,level);
     nthlevel(root->right,curr+1,level);
 }
+void nthlevelrev(Node* root,int curr,int level){
+    if(root==NULL) return;
+    if(curr==level){ 
+    cout<<root->val<<" ";
+    return;
+    }
+    nthlevelrev(root->right,curr+1,level);
+    nthlevelrev(root->left,curr+1,level);
+}
 int levels(Node* root){
     if(root==NULL) return 0;
     int lmax=levels(root->left);
@@ -34,8 +44,20 @@ void levelorder(Node* root){
         cout<<endl; 
     }
 }
+void levelorederqueue(Node* root){ //bfs
+    queue<Node*> q;
+    q.push(root);
+    while(q.size()>0){
+        Node* temp = q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->left!=NULL) q.push(temp->left);
+        if(temp->right!=NULL) q.push(temp->right);
+    }
+}
 
 int main(){
+    
     Node* a =new Node(1);
     Node* b =new Node(2);
     Node* c =new Node(3);
@@ -52,7 +74,16 @@ int main(){
     c->left=f;
     c->right=g;
     g->left=h;
-
+    
     levelorder(a);
     cout<<endl;
+
+    nthlevel(a,1,3);
+    cout<<endl;
+
+    nthlevel(a,1,4);
+    cout<<endl;
+    nthlevelrev(a,0,3);
+    cout<<endl;
+    levelorederqueue(a);
 }
