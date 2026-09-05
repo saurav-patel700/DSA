@@ -56,4 +56,3 @@ int main(){
     levelorder(a);
     cout<<endl;
 }
-// 1 16
