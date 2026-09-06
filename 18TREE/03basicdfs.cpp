@@ -13,15 +13,6 @@ public:
         this->right=NULL;
     }
 };
-void nthlevel(Node* root,int curr,int level){
-    if(root==NULL) return;
-    if(curr==level){ 
-    cout<<root->val<<" ";
-    return;
-    }
-    nthlevel(root->left,curr+1,level);
-    nthlevel(root->right,curr+1,level);
-}
 void nthlevelrev(Node* root,int curr,int level){
     if(root==NULL) return;
     if(curr==level){ 
@@ -31,6 +22,16 @@ void nthlevelrev(Node* root,int curr,int level){
     nthlevelrev(root->right,curr+1,level);
     nthlevelrev(root->left,curr+1,level);
 }
+void nthlevel(Node* root,int curr,int level){
+    if(root==NULL) return;
+    if(curr==level){ 
+    cout<<root->val<<" ";
+    return;
+    }
+    nthlevel(root->left,curr+1,level);
+    nthlevel(root->right,curr+1,level);
+}
+
 int levels(Node* root){
     if(root==NULL) return 0;
     int lmax=levels(root->left);

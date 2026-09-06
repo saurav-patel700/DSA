@@ -2,6 +2,7 @@
 #include<climits>
 #include<stack>
 #include<queue>
+#include<algorithm>
 using namespace std;
 class Node{
 public:
@@ -14,19 +15,57 @@ public:
         this->right=NULL;
     }
 };
-//  int preordertraversal(Node* root){
-//     vector<int> ans;
-//     stack<Node*> st;
-//     if(root!=NULL) st.push(root);
-//     while(st.size()>0){
-//         Node* temp=st.top();
-//         st.pop();
-//         ans.push_back(temp->val);
-//         if(temp->right!=NULL) st.push(temp->right);
-//         if(temp->left!=NULL) st.push(temp->left);
-//     }
-//     return ans;
-//  }
+ void preordertraversal(Node* root){
+    vector<int> ans;
+    stack<Node*> st;
+    if(root!=NULL) st.push(root);
+    while(st.size()>0){
+        Node* temp=st.top();
+        st.pop();
+        ans.push_back(temp->val);
+        if(temp->right!=NULL) st.push(temp->right);
+        if(temp->left!=NULL) st.push(temp->left);
+    }
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+ }
+ void postordertraversal(Node* root){
+    vector<int> ans;
+    stack<Node*> st;
+    if(root!=NULL) st.push(root);
+    while(st.size()>0){
+        Node* temp=st.top();
+        st.pop();
+        ans.push_back(temp->val);
+        if(temp->left!=NULL) st.push(temp->left);
+        if(temp->right!=NULL) st.push(temp->right);
+    }
+    reverse(ans.begin(),ans.end());
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+ }
+ void inordertraversal(Node* root){
+    vector<int> ans;
+    stack<Node*> st;
+    Node* node=root;
+    while(st.size()>0 || node){
+        if(node){
+            st.push(node);
+            node=node->left;
+        }
+        else{
+            Node* temp=st.top();
+            st.pop();
+            ans.push_back(temp->val);
+            node=temp->right;
+        }
+    }
+    for(int i=0;i<ans.size();i++){
+        cout<<ans[i]<<" ";
+    }
+ }
 
 
 Node*construct(int arr[],int n){
@@ -57,9 +96,13 @@ Node*construct(int arr[],int n){
 }
 
 int main(){
-    int arr[]= {1,2,3,4,5,6,INT_MIN,INT_MIN,INT_MIN,7,8,9};
+    int arr[]= {1,2,3,4,5,6,7};
     int n=sizeof(arr)/sizeof(arr[0]);
     Node* root=construct(arr,n);
-    // preordertraversal(root);   
+    preordertraversal(root);
+    cout<<endl;   
+    postordertraversal(root);   
+    cout<<endl;   
+    inordertraversal(root);   
     
 }
