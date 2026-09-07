@@ -1,0 +1,8 @@
+lec 1 
+700  ->  EASY
+701  ->  MEDIUM
+235  ->  MEDIUM 
+98   ->  MEDIUM 
+1038 ->  MEDIUM 
+108  ->  EASY
+1008 ->MEDIUM 
