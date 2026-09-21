@@ -1,7 +1,9 @@
 /*
+LEETCODE LEC1
+      1   TWO SUM
 LEETCODE LEC 3
- 75 
- 42
+    75 sort 012
+    42 trap rain water
  ASSIGNMENT 1
 1 Calculate the product of all the elements in the given array.
 2 Find the second largest element in the given Array in one pass.
@@ -33,13 +35,13 @@ and increment all even indexed values by 10.
 value being unique.
  # If an array arr contains n elements, then check if the given array is a palindrome or not .
 Find the error.
-double getAverage(int arr[], int size);
+double getAverage(int arr[], int size);//
 int main () {
 int balance[5] = {1000, 2, 3, 17, 50};
 double avg;
-avg = getAverage( balance[0], 5 ) ;
+avg = getAverage( balance[0], 5 ) ;///
 cout << "Average value is: " << avg << endl;
-return s;
+return s;//
 }
 
 ASSIGNMENT 3

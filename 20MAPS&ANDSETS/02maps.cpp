@@ -14,9 +14,12 @@ int main(){
     for(auto p: m){
         cout<<p.first<<" "<<p.second<<endl;
     }
+    cout<<m.size()<<endl;
     m.erase("loki");
     cout<<endl;
     for(auto p: m){
         cout<<p.first<<" "<<p.second<<endl;
     }
+    cout<<m.size()<<endl;
+
 } 
