@@ -44,12 +44,46 @@ Node*construct(int arr[],int n){
 }
 void topview(Node* root){
     unordered_map<int,int> m;
-    queue< pair<Node*, int> > q;
+    queue< pair<Node*,int> > q;
+    q.push({root,0});
+    while(q.size()>0){
+        Node* temp=(q.front()).first;
+        int level=(q.front()).second;
+        q.pop();
+        if(m.find(level)==m.end()){
+            m[level]=temp->val;
+        }
+        if(temp->left!=NULL){
+            pair<Node*,int> p;
+            p.first=temp->left;
+            p.second=level-1; 
+            q.push(p);
+        }
+        if(temp->right!=NULL){
+            pair<Node*,int> p;
+            p.first=temp->right;
+            p.second=level+1; 
+            q.push(p);
+        }
+    }
+    int minlevel=INT_MAX;
+    int maxlevel=INT_MIN;
+    for(auto x:m){
+        int level=x.first;
+        minlevel=min(minlevel,level);
+        maxlevel=max(maxlevel,level);
+
+    }
+    for(int i=minlevel;i<=maxlevel;i++){
+        cout<<m[i]<<" ";
+    }
+    cout<<endl;
+
 }
 int main(){
     int arr[] = {1,2,3,4, 5, INT_MIN, 6,INT_MIN, INT_MIN, 7,8};
     int n=sizeof(arr)/sizeof(arr[0]);
     Node* root=construct(arr,n);
+    topview(root);
 
-//1 34
 }
