@@ -12,6 +12,8 @@ public:
         this->right=NULL;
     }
 };
+
+
 void preorder(Node* root){
     if(root==NULL) return;
     cout<<root->val<<" ";
@@ -41,8 +43,11 @@ int main(){
     Node* g =new Node(7);
     Node* h =new Node(8);
 
+
+
     a->left=b;
     a->right=c;
+   
     b->left=d;
     b->right=e;
     c->left=f;
@@ -50,8 +55,13 @@ int main(){
     g->left=h;
     preorder(a);
     cout<<endl;
+   
+   
     inorder(a);
     cout<<endl;
+   
+   
     postorder(a);
     cout<<endl;
 }
+
