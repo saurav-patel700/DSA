@@ -14,8 +14,8 @@ int main(){
     //slidingwindow TC=O(n)
     int i=1,j=k;
     while(j<n){
-        sum=sum + arr[j]-arr[i-1];
-        if(maxsum<sum){
+        sum+= arr[j]-arr[i-1];
+        if(sum>maxsum){ 
             maxsum=sum;
             maxidx=i;
         }

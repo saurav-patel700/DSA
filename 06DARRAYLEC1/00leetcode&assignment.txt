@@ -4,11 +4,11 @@ LEC 1 LEETCODE
 LEC 2
 54
 
-
-
-
 LEC 3
 118
+861
+240
+
 C++ Assignments | 2D Arrays - 1  | Week 6
 Q1: Write a program to store 10 at every index of a 2D matrix with 5 rows and 5 columns. 
 Write a program to add two matrices and save the result in one of the given matrices.

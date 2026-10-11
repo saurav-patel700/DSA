@@ -3,6 +3,8 @@ LEETCODE LEC1
       1   TWO SUM
 LEETCODE LEC 3
     75 sort 012
+    88 merge sort
+    31 next pmc of array 
     42 trap rain water
  ASSIGNMENT 1
 1 Calculate the product of all the elements in the given array.
