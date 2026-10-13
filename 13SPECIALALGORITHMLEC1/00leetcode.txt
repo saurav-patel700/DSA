@@ -1,0 +1,11 @@
+1480 easy
+238 medium
+2483 medium
+1402 hard
+2389 easy
+
+assignment
+303
+724
+2640
+1109
