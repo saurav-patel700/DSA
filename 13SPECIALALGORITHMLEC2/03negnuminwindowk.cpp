@@ -9,7 +9,7 @@ int main(){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    int p=-1;
+    int p=-1; 
     for(int i=0;i<k;i++){
         if(arr[i]<0){
             p=i;
